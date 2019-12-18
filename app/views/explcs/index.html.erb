@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Explcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lc number</th>
+      <th>Issue date</th>
+      <th>Expiry date</th>
+      <th>Currency</th>
+      <th>Amount</th>
+      <th>Applicant</th>
+      <th>Beneficiary</th>
+      <th>Issuing bank</th>
+      <th>Tenor</th>
+      <th>Shipment from</th>
+      <th>Port of loading</th>
+      <th>Port of discharge</th>
+      <th>Final destination</th>
+      <th>Latest shipment date</th>
+      <th>Partial shipment</th>
+      <th>Transhipment</th>
+      <th>Goods description</th>
+      <th>Documents required</th>
+      <th>Additional conditions</th>
+      <th>Drawee</th>
+      <th>Available with</th>
+      <th>Available by</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @explcs.each do |explc| %>
+      <tr>
+        <td><%= explc.lc_number %></td>
+        <td><%= explc.issue_date %></td>
+        <td><%= explc.expiry_date %></td>
+        <td><%= explc.currency %></td>
+        <td><%= explc.amount %></td>
+        <td><%= explc.applicant %></td>
+        <td><%= explc.beneficiary %></td>
+        <td><%= explc.issuing_bank %></td>
+        <td><%= explc.tenor %></td>
+        <td><%= explc.shipment_from %></td>
+        <td><%= explc.port_of_loading %></td>
+        <td><%= explc.port_of_discharge %></td>
+        <td><%= explc.final_destination %></td>
+        <td><%= explc.latest_shipment_date %></td>
+        <td><%= explc.partial_shipment %></td>
+        <td><%= explc.transhipment %></td>
+        <td><%= explc.goods_description %></td>
+        <td><%= explc.documents_required %></td>
+        <td><%= explc.additional_conditions %></td>
+        <td><%= explc.drawee %></td>
+        <td><%= explc.available_with %></td>
+        <td><%= explc.available_by %></td>
+        <td><%= explc.remarks %></td>
+        <td><%= link_to 'Show', explc %></td>
+        <td><%= link_to 'Edit', edit_explc_path(explc) %></td>
+        <td><%= link_to 'Destroy', explc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Explc', new_explc_path %>
